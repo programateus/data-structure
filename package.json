@@ -1,0 +1,19 @@
+{
+  "name": "data-structure",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.7.0",
+    "@types/node": "^20.14.10",
+    "eslint": "~9.7.0",
+    "globals": "^15.8.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^7.16.0"
+  }
+}
