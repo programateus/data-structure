@@ -1,6 +1,6 @@
 # Pilha (Stack)
 
-Uma pilha é uma coleção ordenada de itens que obedece ao princípio **LIFO** (last-in first-out, ou seja, o primeiro a entrar é o ultimo a sair). A adição de novos itens ou a remoção de itens existentes ocorrem sempre na mesma extremidade. O final da pilha é conhecido como topo e o começo da pilha é conhecido como base.
+Uma pilha é uma coleção ordenada de itens que obedece ao princípio **LIFO** (Last In First Out, ou seja, o primeiro a entrar é o ultimo a sair). A adição de novos itens ou a remoção de itens existentes ocorrem sempre na mesma extremidade. O final da pilha é conhecido como topo e o começo da pilha é conhecido como base.
 
 Um exemplo da vida real de pilha pode ser pilhas de livros, ou de bandejas de uma lanchonete. Também é usada em navegadores para salvar o histórico, quando você clica em voltar, ele remove o item do topo.
 
