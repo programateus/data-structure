@@ -14,7 +14,7 @@ class Queue<T> {
 
 Precisaremos de uma estrutura de dados para armazenar a fila, nesse caso será usado um **Array**. Listaremos agora os seguintes métodos usados para remoção de elementos:
 
-- **enqueue(element(s))**: esse método adiciona um novo elemento no final da fila;
+- **enqueue(element)**: esse método adiciona um novo elemento no final da fila;
 - **dequeue()**: esse método remove o primeiro elemento da fila (o item que está na frente). Também devolve o elemento removido;
 - **peek()**: devolve o primeiro elemento da fila (o primeiro que foi adicionado e o primeiro que será removido da fila). A fila não é modificada com esse método;
 - **isEmpty()**: retorna _true_ se o tamanho da fila for igual a 0, ou _false_ caso a fila tenha itens;
@@ -55,24 +55,37 @@ export class Queue<T> {
 }
 ```
 
-Exemplo de uso da classe Queue:
+Exemplo de uso da classe Queue com o problema da Batata Quente:
 
 ```typescript
 import { Queue } from "./Queue";
 
-const personQueue = () => {
+function hotPotato(people: string[], num: number) {
   const queue = new Queue<string>();
-  queue.enqueue("John");
-  queue.enqueue("Jane");
-  queue.enqueue("Jack");
-  queue.enqueue("Jill");
+  const eliminated: string[] = [];
 
-  console.log(queue.peek());
-  console.log(queue.dequeue());
-  console.log(queue.peek());
-  console.log(queue.isEmpty());
-  console.log(queue.size());
-};
+  for (const person of people) {
+    queue.enqueue(person);
+  }
 
-personQueue();
+  while (queue.size() > 1) {
+    for (let i = 0; i < num; i++) {
+      queue.enqueue(queue.dequeue()!);
+    }
+
+    eliminated.push(queue.dequeue()!);
+  }
+
+  return { eliminated, winner: queue.dequeue() };
+}
+
+const { eliminated, winner } = hotPotato(
+  ["Bill", "David", "Susan", "Jane", "Kent", "Brad"],
+  7
+);
+
+eliminated.forEach((name) =>
+  console.log(`${name} was eliminated from the Hot Potato game.`)
+);
+console.log(`The winner is: ${winner}.`);
 ```

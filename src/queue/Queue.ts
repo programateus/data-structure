@@ -1,8 +1,8 @@
 export class Queue<T> {
   private items: T[] = [];
 
-  enqueue(...elements: T[]): void {
-    this.items = this.items.concat(elements);
+  enqueue(element: T): void {
+    this.items.push(element);
   }
 
   dequeue(): T | undefined {
