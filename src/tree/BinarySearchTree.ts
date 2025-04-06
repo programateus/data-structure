@@ -10,7 +10,7 @@ export class BinarySearchTree {
       this.rootNode = new BinaryNode(key);
       return;
     }
-    this.insertNode(this.rootNode, key);
+    this.rootNode = this.insertNode(this.rootNode, key);
   }
 
   insertNode(node: BinaryNode, key: number): BinaryNode {
@@ -56,7 +56,7 @@ export class BinarySearchTree {
     this.inOrderTraverseNode(this.rootNode, fn);
   }
 
-  private inOrderTraverseNode(node: BinaryNode, fn: TraverseCallback) {
+  inOrderTraverseNode(node: BinaryNode, fn: TraverseCallback) {
     if (node.left) this.inOrderTraverseNode(node.left, fn);
     fn(node);
     if (node.right) this.inOrderTraverseNode(node.right, fn);
